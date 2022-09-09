@@ -4,7 +4,7 @@ md5o="aaaa"
 dkdir=/mnt/sda1/opt/docker/TV-Spider #(改成自己的目录)
 imgtag=tvsp:latest  #(改成自己的镜像TAG)
 contname=TV-Spider #(改成自己的容器名称)
-cmd='CMD ["gunicorn", "-w 4", "-b 0.0.0.0:8888", "app:app"]' #(从这里更改启动端口)
+cmd='CMD ["gunicorn", "-w 1", "-b 0.0.0.0:8888", "app:app"]' #(从这里更改启动端口)
 #判断目录是否存在
 if [ ! -d $dkdir ];then
  mkdir $dkdir
