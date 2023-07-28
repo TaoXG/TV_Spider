@@ -1,7 +1,7 @@
 #!/bin/bash
 #定义变量
 md5o="aaaa"
-dkdir=/mnt/sda1/opt/docker/TV-Spider #(改成自己的目录)
+dkdir=/mnt/sda1/TV-Spider #(改成自己的目录)
 imgtag=tvsp:latest  #(改成自己的镜像TAG)
 contname=TV-Spider #(改成自己的容器名称)
 cmd='CMD ["gunicorn", "-w 1", "-b 0.0.0.0:8888", "app:app"]' #(从这里更改启动端口)
@@ -46,7 +46,7 @@ if [[ $md5n != $md5o && -s /tmp/tvsp.zip ]];then
   docker rm $contname
   docker rmi $imgtag
   cd $dkdir
-  docker image build -t $imgtag .
+  docker image build -t $imgtag 。
   cd $cudir
   mv /tmp/tvsp/TV_Spider-main/app.py $dkdir/app.py
   mv /tmp/tvsp/TV_Spider-main/utils/ $dkdir/utils/
